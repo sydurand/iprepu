@@ -1,0 +1,9 @@
+https://lite.ip2location.com/database-download
+https://github.com/sapics/ip-location-db?tab=readme-ov-file
+https://github.com/meeb/whoisit/blob/main/whoisit/bootstrap.py
+https://fastapi.tiangolo.com/
+https://www.afnic.fr/observatoire-ressources/papier-expert/rdap-obtenir-des-informations-sur-un-nom-de-domaine/
+https://github.com/20c/rdap/tree/main/rdap
+https://data.iana.org/rdap/
+https://gist.github.com/chrisdlangton/a10979c7e30f227a9f396dc4e4edc6c3
+https://about.rdap.org/
