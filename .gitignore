@@ -158,3 +158,14 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+.ianardapcache.json
+delegated-afrinic-extended-latest
+delegated-apnic-extended-latest
+delegated-arin-extended-latest
+delegated-lacnic-extended-latest
+delegated-ripencc-extended-latest
+geolite2-city-ipv4.csv.gz
+geolocationDatabaseIPv4.csv
+geolocationDatabaseIPv4.csv.zip
+ip2asn-v4.tsv
+ip2asn-v4.tsv.gz
