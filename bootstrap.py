@@ -4,8 +4,9 @@ import gzip
 import bisect
 import shutil
 import zipfile
-from netaddr import spanning_cidr
+import json
 
+from netaddr import spanning_cidr
 from concurrent.futures import ThreadPoolExecutor
 from csv import reader
 from math import log2
@@ -206,7 +207,10 @@ if __name__ == "__main__":
 
     response = requests.get(f'{server}domain/{domain}')
     print(response.status_code)
-    print(response.content)
+
+    json_object = json.loads(response.content)
+    json_formatted_str = json.dumps(json_object, indent=2)
+    print(json_formatted_str)
 
     """
     if too_old_dataset():
