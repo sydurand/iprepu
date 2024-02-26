@@ -48,3 +48,19 @@ class IanaRDAPDatabase():
             return self.services[tld]
         else:
             return None
+
+if __name__ == "__main__":
+    rdap = IanaRDAPDatabase(maxage=1)
+
+    print(f'Database "{rdap.description}", version {rdap.version} published on {rdap.publication}, {len(rdap.services)} services')
+
+    domain = f'google.fr'
+    server = rdap.find(domain)
+    print(server)
+
+    response = requests.get(f'{server}domain/{domain}')
+    print(response.status_code)
+
+    json_object = json.loads(response.content)
+    json_formatted_str = json.dumps(json_object, indent=2)
+    print(json_formatted_str)

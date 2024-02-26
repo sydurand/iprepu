@@ -6,6 +6,10 @@ import shutil
 import zipfile
 import json
 
+from ipwhois.net import Net
+from ipwhois.asn import ASNOrigin
+from ipwhois import IPWhois
+
 from netaddr import spanning_cidr
 from concurrent.futures import ThreadPoolExecutor
 from csv import reader
@@ -197,29 +201,20 @@ def lookup(ip: str, data: str) -> str:
 if __name__ == "__main__":
     print('IP Reputation v0.1')
 
-    rdap = IanaRDAPDatabase(maxage=1)
+    obj = IPWhois('82.121.189.210')
+    r= obj.lookup_rdap(depth=1)
 
-    print(f'Database "{rdap.description}", version {rdap.version} published on {rdap.publication}, {len(rdap.services)} services')
+    print(r)
+    
 
-    domain = f'google.fr'
-    server = rdap.find(domain)
-    print(server)
+    quit()
 
-    response = requests.get(f'{server}domain/{domain}')
-    print(response.status_code)
-
-    json_object = json.loads(response.content)
-    json_formatted_str = json.dumps(json_object, indent=2)
-    print(json_formatted_str)
-
-    """
     if too_old_dataset():
         download_dataset()
 
     asn_data = merge_asn_dataset()
-    city_data = merge_city_dataset()
+    #city_data = merge_city_dataset()
 
 
     print(lookup('82.121.189.210', data=asn_data))
-    print(lookup('82.121.189.210', data=city_data))
-    """
+    #print(lookup('82.121.189.210', data=city_data))
